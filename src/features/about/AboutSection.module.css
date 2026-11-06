@@ -1,0 +1,171 @@
+.section {
+  padding-top: clamp(5rem, 10vw, 9rem);
+  padding-bottom: clamp(5rem, 9vw, 8rem);
+  border-top: 1px solid var(--line);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: clamp(2rem, 9vw, 9rem);
+  padding-top: 3.7rem;
+}
+
+.headingBlock {
+  position: relative;
+}
+
+.headingBlock h2 {
+  color: var(--ink);
+  font: 400 clamp(3.4rem, 6.5vw, 6.5rem) / 0.98 var(--font-serif);
+  letter-spacing: -0.07em;
+}
+
+.headingBlock h2 em {
+  color: var(--accent-ink);
+}
+
+.japanese {
+  display: inline-block;
+  margin: 2rem 0 0 0.4rem;
+  color: var(--muted);
+  font: 0.8rem var(--font-serif);
+  letter-spacing: 0.3em;
+  writing-mode: vertical-rl;
+}
+
+.body {
+  max-width: 38rem;
+  padding-top: 0.5rem;
+}
+
+.body p {
+  margin-bottom: 1.15rem;
+  color: var(--muted);
+  font-size: 0.91rem;
+  line-height: 1.95;
+}
+
+.body .lead {
+  color: var(--ink);
+  font: 400 clamp(1.25rem, 2.1vw, 1.8rem) / 1.5 var(--font-serif);
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.8rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid var(--accent);
+  color: var(--ink);
+  font-size: 0.74rem;
+}
+
+.featureRow {
+  display: grid;
+  grid-template-columns: minmax(0, 1.12fr) minmax(15rem, 0.88fr);
+  align-items: stretch;
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+  margin-top: clamp(3rem, 6vw, 5rem);
+}
+
+.scene {
+  min-width: 0;
+  margin: 0;
+}
+
+.scene img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  filter: saturate(0.88) contrast(1.04);
+}
+
+.scene figcaption {
+  padding-top: 0.65rem;
+  color: var(--muted);
+  font: 0.54rem var(--font-mono);
+  letter-spacing: 0.1em;
+}
+
+.quote {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  min-width: 0;
+  margin: 0;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  border: 1px solid var(--line);
+  border-left: 2px solid var(--accent);
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--accent) 7%, transparent), transparent 65%),
+    var(--surface);
+}
+
+.quoteEyebrow {
+  color: var(--muted);
+  font: 0.56rem var(--font-mono);
+  letter-spacing: 0.13em;
+}
+
+.quoteMark {
+  height: 2.8rem;
+  margin-top: 1.2rem;
+  color: var(--accent);
+  font: 5rem / 1 var(--font-serif);
+}
+
+.quote blockquote {
+  max-width: 30rem;
+  color: var(--ink);
+  font: italic 400 clamp(1.25rem, 2.3vw, 2rem) / 1.45 var(--font-serif);
+}
+
+.quoteCredit {
+  margin-top: 1.8rem;
+  color: var(--muted);
+  font: 0.55rem var(--font-mono);
+  letter-spacing: 0.12em;
+}
+
+@media (max-width: 720px) {
+  .layout {
+    grid-template-columns: 1fr;
+    gap: 1.8rem;
+    padding-top: 2.7rem;
+  }
+
+  .headingBlock h2 {
+    font-size: clamp(3.4rem, 13vw, 5.5rem);
+  }
+
+  .japanese {
+    position: absolute;
+    top: 0.2rem;
+    right: 1rem;
+    margin: 0;
+  }
+
+  .featureRow {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+    margin-top: 2.7rem;
+  }
+
+  .quote {
+    min-height: 15rem;
+    padding: 1.5rem;
+  }
+
+  .quoteMark {
+    margin-top: 0.8rem;
+  }
+
+  .quoteCredit {
+    margin-top: 1.2rem;
+  }
+}

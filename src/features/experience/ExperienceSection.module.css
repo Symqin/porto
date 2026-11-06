@@ -1,0 +1,128 @@
+.section {
+  padding-top: clamp(5rem, 9vw, 8rem);
+  padding-bottom: clamp(5rem, 9vw, 8rem);
+  border-top: 1px solid var(--line);
+}
+
+.headingRow {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 3.2rem 0 3rem;
+}
+
+.headingRow h2 {
+  color: var(--ink);
+  font: 400 clamp(3.2rem, 6vw, 6rem)/.98 var(--font-serif);
+  letter-spacing: -.07em;
+}
+
+.headingRow h2 em {
+  color: var(--accent-ink);
+}
+
+.headingRow p {
+  max-width: 20rem;
+  margin-bottom: .4rem;
+  color: var(--muted);
+  font-size: .83rem;
+  line-height: 1.8;
+}
+
+.timeline {
+  border-top: 1px solid var(--line-strong);
+}
+
+.entry {
+  display: grid;
+  grid-template-columns: minmax(10rem, .68fr) minmax(0, 1.32fr) 1.5rem;
+  gap: clamp(1rem, 4vw, 4rem);
+  padding: 2rem .6rem 2.2rem;
+  border-bottom: 1px solid var(--line);
+  transition: background .2s, padding .2s;
+}
+
+.entry:hover {
+  padding-right: 1rem;
+  padding-left: 1rem;
+  background: var(--surface);
+}
+
+.entryMeta {
+  display: flex;
+  align-items: flex-start;
+  gap: .7rem;
+  padding-top: .15rem;
+  color: var(--muted);
+  font: .57rem var(--font-mono);
+  letter-spacing: .08em;
+}
+
+.entryIndex {
+  color: var(--accent);
+}
+
+.entryContent {
+  min-width: 0;
+  max-width: 42rem;
+}
+
+.type {
+  color: var(--accent-ink);
+  font: .55rem var(--font-mono);
+  letter-spacing: .16em;
+}
+
+.entryContent h3 {
+  margin-top: .45rem;
+  color: var(--ink);
+  font: 400 clamp(1.25rem, 2vw, 1.8rem)/1.25 var(--font-serif);
+  letter-spacing: -.025em;
+}
+
+.organization {
+  margin-top: .25rem;
+  color: var(--muted);
+  font-size: .74rem;
+}
+
+.description {
+  max-width: 40rem;
+  margin-top: .85rem;
+  color: var(--muted);
+  font-size: .79rem;
+  line-height: 1.9;
+}
+
+.entrySign {
+  color: var(--accent);
+  font-size: 1.1rem;
+}
+
+@media (max-width: 700px) {
+  .headingRow {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1.4rem;
+    padding-top: 2.5rem;
+  }
+  .headingRow h2 {
+    font-size: clamp(3.2rem, 13vw, 4.6rem);
+  }
+  .entry {
+    grid-template-columns: 1fr auto;
+    gap: .7rem;
+    padding: 1.4rem .25rem 1.7rem;
+  }
+  .entryMeta {
+    grid-column: 1 / -1;
+  }
+  .entryContent {
+    grid-column: 1;
+  }
+  .entrySign {
+    grid-column: 2;
+    grid-row: 2;
+  }
+}

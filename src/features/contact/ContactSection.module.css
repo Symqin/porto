@@ -1,0 +1,114 @@
+.section {
+  padding-top: clamp(5rem, 9vw, 8rem);
+  padding-bottom: 2rem;
+  border-top: 1px solid var(--line);
+}
+
+.contactGrid {
+  display: grid;
+  grid-template-columns: 1.15fr .85fr;
+  align-items: end;
+  gap: clamp(2rem, 8vw, 8rem);
+  padding: 4rem 0 5rem;
+}
+
+.eyebrow {
+  margin-bottom: 1.6rem;
+  color: var(--accent-ink);
+  font: .58rem var(--font-mono);
+  letter-spacing: .15em;
+}
+
+.contactGrid h2 {
+  color: var(--ink);
+  font: 400 clamp(4rem, 8vw, 8rem)/.88 var(--font-serif);
+  letter-spacing: -.08em;
+}
+
+.contactGrid h2 em {
+  color: var(--accent-ink);
+}
+
+.contactAside {
+  max-width: 27rem;
+  padding-bottom: .4rem;
+}
+
+.contactAside > p {
+  color: var(--muted);
+  font-size: .88rem;
+  line-height: 1.9;
+}
+
+.links {
+  margin-top: 2rem;
+  border-top: 1px solid var(--line-strong);
+}
+
+.links a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: .9rem .15rem;
+  border-bottom: 1px solid var(--line);
+  color: var(--ink);
+  font-size: .78rem;
+  transition: padding .2s, color .2s;
+}
+
+.links a:hover {
+  padding-right: .5rem;
+  padding-left: .5rem;
+  color: var(--accent-ink);
+}
+
+.links a span {
+  display: flex;
+  align-items: center;
+  gap: .7rem;
+}
+
+.availability {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: .55rem;
+  margin-top: 1.4rem;
+  color: var(--muted);
+  font: .59rem/1.6 var(--font-mono);
+}
+
+.availability i {
+  flex: 0 0 .45rem;
+  width: .45rem;
+  height: .45rem;
+  margin-top: .25rem;
+  border-radius: 50%;
+  background: #7eaa8c;
+  box-shadow: 0 0 0 .22rem #7eaa8c22;
+}
+
+.backTop {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  padding: 1.2rem 0;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font: .55rem var(--font-mono);
+  letter-spacing: .12em;
+}
+
+.backTop svg {
+  transform: rotate(180deg);
+}
+
+@media (max-width: 760px) {
+  .contactGrid {
+    grid-template-columns: 1fr;
+    gap: 2.8rem;
+    padding: 2.8rem 0 3.5rem;
+  }
+  .contactGrid h2 {
+    font-size: clamp(4.2rem, 16vw, 6rem);
+  }
+}

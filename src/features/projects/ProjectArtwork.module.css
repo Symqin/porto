@@ -1,0 +1,59 @@
+.artwork {
+  margin: 0;
+  background: #111522;
+}
+
+.imageFrame {
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid var(--line-strong);
+  background: #1b1d30;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 8.5;
+  object-fit: cover;
+  image-rendering: pixelated;
+  transition: transform 0.35s steps(5, end), filter 0.25s ease;
+  filter: saturate(0.9) contrast(1.04);
+}
+
+.artwork:hover .image {
+  transform: scale(1.025);
+  filter: saturate(1.08) contrast(1.04);
+}
+
+.imageIndex {
+  position: absolute;
+  right: 0.65rem;
+  bottom: 0.65rem;
+  padding: 0.3rem 0.45rem;
+  border: 1px solid rgb(255 255 255 / 35%);
+  background: rgb(12 14 27 / 85%);
+  color: #f4ead9;
+  font: 0.55rem var(--font-mono);
+}
+
+.caption {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.65rem 1rem 0;
+  color: var(--faint);
+  font: 0.5rem var(--font-mono);
+  letter-spacing: 0.07em;
+}
+
+.pixelDot {
+  width: 0.45rem;
+  height: 0.45rem;
+  background: var(--accent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .image {
+    transition: none;
+  }
+}

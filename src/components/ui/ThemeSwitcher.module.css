@@ -1,0 +1,139 @@
+.root {
+  position: relative;
+  z-index: 40;
+}
+
+.trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: .55rem;
+  min-height: 2.6rem;
+  padding: 0 .85rem;
+  border: 1px solid var(--line);
+  border-radius: 0.25rem;
+  color: var(--ink);
+  background: var(--surface);
+  font: 500 .72rem var(--font-mono);
+  letter-spacing: .02em;
+  transition: border-color .2s, background .2s;
+}
+
+.trigger:hover {
+  border-color: var(--accent);
+  background: var(--surface-raised);
+}
+
+.trigger svg:last-child {
+  transition: transform .2s;
+}
+
+.rotated {
+  transform: rotate(180deg);
+}
+
+.dismiss {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  cursor: default;
+}
+
+.menu {
+  position: absolute;
+  z-index: 2;
+  top: calc(100% + .7rem);
+  right: 0;
+  width: min(19rem, calc(100vw - 2rem));
+  padding: .8rem;
+  border: 1px solid var(--line);
+  border-radius: 0.35rem;
+  background: var(--panel);
+  box-shadow: 0 24px 70px #0005;
+  animation: reveal .16s ease-out;
+}
+
+.menuEyebrow {
+  padding: .3rem .55rem .65rem;
+  color: var(--muted);
+  font: 500 .6rem var(--font-mono);
+  letter-spacing: .16em;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  width: 100%;
+  padding: .7rem .55rem;
+  border-radius: .2rem;
+  text-align: left;
+  color: var(--ink);
+  transition: background .2s;
+}
+
+.option:hover, .selected {
+  background: var(--surface-raised);
+}
+
+.swatch {
+  flex: 0 0 1.65rem;
+  width: 1.65rem;
+  height: 1.65rem;
+  border: 1px solid #ffffff20;
+  border-radius: 0.15rem;
+  background: linear-gradient(135deg, var(--swatch-a), var(--swatch-b));
+}
+
+.ink {
+  --swatch-a: #b68d9e;
+  --swatch-b: #718995;
+}
+
+.blue-hour {
+  --swatch-a: #8baac1;
+  --swatch-b: #323f61;
+}
+
+.moss {
+  --swatch-a: #a4b69d;
+  --swatch-b: #586c61;
+}
+
+.persimmon {
+  --swatch-a: #d18b67;
+  --swatch-b: #8e5b68;
+}
+
+.optionCopy {
+  display: grid;
+  flex: 1;
+  gap: .18rem;
+}
+
+.optionCopy strong {
+  font-size: .78rem;
+  font-weight: 600;
+}
+
+.optionCopy small {
+  color: var(--muted);
+  font-size: .64rem;
+  line-height: 1.4;
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .menu {
+    animation: none;
+  }
+}

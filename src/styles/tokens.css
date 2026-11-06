@@ -1,0 +1,68 @@
+:root {
+  color-scheme: dark;
+  --font-pixel: 'Press Start 2P', 'Courier New', monospace;
+  --font-serif: 'DM Sans', Inter, ui-sans-serif, system-ui, sans-serif;
+  --font-sans: 'DM Sans', Inter, ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', 'SFMono-Regular', Consolas, monospace;
+  --bg: #10111d;
+  --panel: #17192a;
+  --surface: #202238;
+  --surface-raised: #2a2b46;
+  --ink: #f2eadb;
+  --muted: #b6b5c8;
+  --faint: #85859d;
+  --line: #d9d6f01c;
+  --line-strong: #d9d6f044;
+  --accent: #ffbd59;
+  --accent-ink: #ffcf83;
+  --accent-soft: #ffbd5920;
+  --button-ink: #171521;
+}
+
+:root[data-theme='blue-hour'] {
+  --bg: #101626;
+  --panel: #172238;
+  --surface: #202e49;
+  --surface-raised: #2a3b59;
+  --ink: #e9efff;
+  --muted: #aabbd3;
+  --faint: #788ba8;
+  --line: #d9e7f31c;
+  --line-strong: #d9e7f338;
+  --accent: #8fc8ff;
+  --accent-ink: #b6dcff;
+  --accent-soft: #8fc8ff20;
+  --button-ink: #111a25;
+}
+
+:root[data-theme='moss'] {
+  --bg: #111b1a;
+  --panel: #192825;
+  --surface: #22342e;
+  --surface-raised: #2d443a;
+  --ink: #e8f0df;
+  --muted: #afc0ad;
+  --faint: #7f9986;
+  --line: #e7f2e31c;
+  --line-strong: #e7f2e338;
+  --accent: #a8d48a;
+  --accent-ink: #c6e6ac;
+  --accent-soft: #a8d48a20;
+  --button-ink: #182019;
+}
+
+:root[data-theme='persimmon'] {
+  --bg: #211522;
+  --panel: #2b1d35;
+  --surface: #392548;
+  --surface-raised: #4a2e5b;
+  --ink: #f4e7ed;
+  --muted: #c5aebe;
+  --faint: #987e98;
+  --line: #f7e4dc1c;
+  --line-strong: #f7e4dc38;
+  --accent: #ff8f82;
+  --accent-ink: #ffb0a6;
+  --accent-soft: #ff8f8220;
+  --button-ink: #241819;
+}

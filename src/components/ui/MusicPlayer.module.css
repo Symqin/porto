@@ -1,0 +1,163 @@
+.player {
+  position: fixed;
+  right: clamp(1rem, 3vw, 2.5rem);
+  bottom: 1.2rem;
+  z-index: 35;
+  display: flex;
+  align-items: center;
+  gap: .9rem;
+  max-width: calc(100vw - 2rem);
+  padding: .6rem .7rem .6rem .65rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--panel) 92%, transparent);
+  box-shadow: 0 12px 50px #0004;
+  backdrop-filter: blur(18px);
+}
+
+.identity {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  min-width: 0;
+}
+
+.artwork {
+  display: grid;
+  flex: 0 0 2.25rem;
+  width: 2.25rem;
+  height: 2.25rem;
+  place-items: center;
+  border-radius: 50%;
+  color: var(--accent-ink);
+  background: var(--accent-soft);
+}
+
+.trackCopy {
+  display: grid;
+  min-width: 0;
+  gap: .1rem;
+}
+
+.trackCopy strong {
+  overflow: hidden;
+  color: var(--ink);
+  font: 500 .68rem var(--font-sans);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.trackCopy small {
+  color: var(--muted);
+  font: .56rem var(--font-mono);
+  white-space: nowrap;
+}
+
+.equalizer {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  height: 1.1rem;
+}
+
+.equalizer i {
+  display: block;
+  width: 2px;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--accent);
+  opacity: .55;
+}
+
+.equalizer.active i {
+  animation: equalize .75s ease-in-out infinite alternate;
+}
+
+.equalizer.active i:nth-child(2) {
+  animation-delay: -.4s;
+}
+
+.equalizer.active i:nth-child(3) {
+  animation-delay: -.2s;
+}
+
+.equalizer.active i:nth-child(4) {
+  animation-delay: -.55s;
+}
+
+.equalizer.active i:nth-child(5) {
+  animation-delay: -.3s;
+}
+
+.playButton {
+  display: grid;
+  flex: 0 0 2.25rem;
+  width: 2.25rem;
+  height: 2.25rem;
+  place-items: center;
+  border-radius: 50%;
+  color: var(--button-ink);
+  background: var(--accent);
+  transition: transform .2s;
+}
+
+.playButton:hover {
+  transform: scale(1.06);
+}
+
+.volumeControl {
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+  color: var(--muted);
+}
+
+.volumeControl button {
+  display: grid;
+  place-items: center;
+  padding: .25rem;
+}
+
+.volumeControl input {
+  width: 3.5rem;
+  accent-color: var(--accent);
+}
+
+.unsupported {
+  position: absolute;
+  right: 0;
+  bottom: calc(100% + .4rem);
+  padding: .3rem .5rem;
+  border-radius: .35rem;
+  color: var(--ink);
+  background: var(--panel);
+  font-size: .6rem;
+  white-space: nowrap;
+}
+
+@keyframes equalize {
+  from {
+    height: 3px;
+  }
+  to {
+    height: 15px;
+  }
+}
+
+@media (max-width: 540px) {
+  .player {
+    right: .75rem;
+    bottom: .75rem;
+    gap: .65rem;
+  }
+  .trackCopy small, .volumeControl {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .equalizer.active i {
+    animation: none;
+    height: 6px;
+  }
+}
